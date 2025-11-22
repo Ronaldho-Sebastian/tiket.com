@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tiket.com – Header & Hero (Slice)</title>
+  <!-- Google Font: Inter (tiket.com uses a clean geometric sans; Inter is a close match) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ["Inter", "ui-sans-serif", "system-ui"] },
+          colors: {
+            tiket: {
+              blue: "#0D6EFD", // primary-ish CTA blue
+              dark: "#0B132A",
+            },
+          },
+          boxShadow: {
+            tiket: "0 20px 45px rgba(2, 37, 78, 0.15)",
+          },
+          dropShadow: {
+            card: "0 8px 24px rgba(2,37,78,.12)",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto,
+        Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    /* Hide number input arrows (if any later) */
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+    <section class="bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+    <!-- Breadcrumb -->
+    <nav class="mb-4 text-sm text-slate-600">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="#" class="hover:text-slate-900">Hotel</a></li>
+        <li class="text-slate-400">›</li>
+        <li><a href="#" class="hover:text-slate-900">Provinsi Yogyakarta</a></li>
+        <li class="text-slate-400">›</li>
+        <li><a href="#" class="hover:text-slate-900">Sleman</a></li>
+        <li class="text-slate-400">›</li>
+        <li><a href="#" class="hover:text-slate-900">Mlati</a></li>
+        <li class="text-slate-400">›</li>
+        <li class="font-medium text-slate-900">The Kharma Villas Yogyakarta</li>
+      </ol>
+    </nav>
+
+    <!-- Gallery grid -->
+    <div class="grid gap-4 md:grid-cols-3">
+      <!-- Left: main image -->
+      <figure class="relative md:col-span-2 overflow-hidden rounded-2xl shadow-sm">
+        <img
+          src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1600&auto=format&fit=crop"
+          alt="Taman villa dengan jalur batu dan gazebo"
+          class="h-[280px] w-full object-cover sm:h-[380px] lg:h-[520px]"
+          loading="lazy"
+        />
+        <!-- Favorite button -->
+        <button
+          type="button"
+          class="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 backdrop-blur hover:bg-white transition"
+          aria-label="Simpan ke favorit"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-800" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.734-.715-1.608-2.377-2.734-4.313-2.734C5.098 3.75 3 5.765 3 8.25c0 7.22 8.25 12 9 12s9-4.78 9-12z" />
+          </svg>
+        </button>
+      </figure>
+
+      <!-- Right: mosaic -->
+      <div class="grid grid-cols-2 grid-rows-2 gap-4">
+        <!-- Top wide -->
+        <figure class="col-span-2 overflow-hidden rounded-2xl shadow-sm relative">
+          <img
+            src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1400&auto=format&fit=crop"
+            alt="Ruang tamu villa dengan pintu kaca ke halaman"
+            class="h-40 w-full object-cover sm:h-48 lg:h-60"
+            loading="lazy"
+          />
+        </figure>
+        <!-- Bottom left -->
+        <figure class="overflow-hidden rounded-2xl shadow-sm relative">
+          <img
+            src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2f9c?q=80&w=800&auto=format&fit=crop"
+            alt="Kolam renang kecil dengan kanopi jerami"
+            class="h-36 w-full object-cover sm:h-40 lg:h-44"
+            loading="lazy"
+          />
+        </figure>
+        <!-- Bottom right with 'Lihat semua foto' -->
+        <figure class="overflow-hidden rounded-2xl shadow-sm relative">
+          <img
+            src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop"
+            alt="Kamar tidur villa dengan jendela besar"
+            class="h-36 w-full object-cover sm:h-40 lg:h-44"
+            loading="lazy"
+          />
+          <a
+            href="#galeri"
+            class="absolute bottom-3 right-3 rounded-full bg-black/60 px-3 py-1.5 text-xs font-medium text-white backdrop-blur hover:bg-black/70 transition"
+          >
+            Lihat semua foto
+          </a>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

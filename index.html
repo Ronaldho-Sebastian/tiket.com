@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tiket.com – Header & Hero (Slice)</title>
+  <!-- Google Font: Inter (tiket.com uses a clean geometric sans; Inter is a close match) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ["Inter", "ui-sans-serif", "system-ui"] },
+          colors: {
+            tiket: {
+              blue: "#0D6EFD", // primary-ish CTA blue
+              dark: "#0B132A",
+            },
+          },
+          boxShadow: {
+            tiket: "0 20px 45px rgba(2, 37, 78, 0.15)",
+          },
+          dropShadow: {
+            card: "0 8px 24px rgba(2,37,78,.12)",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto,
+        Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    /* Hide number input arrows (if any later) */
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-slate-900">
+  <!-- Header -->
+  <header
+    class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="mx-auto max-w-[120rem] px-4 sm:px-6 lg:px-8 h-20 flex items-center gap-4">
+      <!-- Left: logo + search -->
+      <div class="flex items-center gap-5 min-w-0 flex-1">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 shrink-0">
+          <!-- Simplified tiket.com logomark -->
+          <span class="inline-grid place-items-center w-9 h-9 rounded-full bg-yellow-400 text-white font-bold">t</span>
+          <span class="sr-only">tiket.com</span>
+        </a>
+
+        <!-- Search -->
+        <div class="hidden md:flex items-center min-w-0 flex-1">
+          <div
+            class="flex items-center gap-3 w-full rounded-full border border-slate-200 bg-slate-50 px-4 py-2.5 focus-within:border-slate-300 focus-within:ring-2 focus-within:ring-slate-100">
+            <!-- search icon -->
+            <svg class="w-5 h-5 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input class="w-full bg-transparent outline-none text-[15px] placeholder:text-slate-400"
+              placeholder="Tur ke Lombok" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Center: main nav -->
+      <nav class="hidden lg:flex items-center gap-5 text-[15px] font-medium">
+        <a class="hover:text-slate-900 text-slate-700" href="#">Pesawat</a>
+        <a class="text-slate-900 font-semibold" href="#">Hotel</a>
+        <a class="hover:text-slate-900 text-slate-700" href="#">Vila & Apt.</a>
+        <a class="hover:text-slate-900 text-slate-700" href="#">To Do</a>
+        <a class="hover:text-slate-900 text-slate-700" href="#">Kereta</a>
+        <div class="relative">
+          <button class="flex items-center gap-1 text-slate-700 hover:text-slate-900">
+            Lainnya
+            <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Right: orders, currency, auth -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <a href="#" class="hidden xl:inline text-[15px] text-slate-700 hover:text-slate-900">Your Orders</a>
+        <button class="hidden md:flex items-center gap-1.5 text-[15px] text-slate-700 hover:text-slate-900">
+          <img alt="ID" class="w-5 h-5 rounded-sm" src="https://flagcdn.com/w20/id.png" />
+          IDR
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+        <a class="px-4 py-2.5 rounded-full border border-slate-200 text-[15px] font-semibold hover:bg-slate-50"
+          href="#">Masuk</a>
+        <a class="px-4 py-2.5 rounded-full bg-tiket.blue text-white text-[15px] font-semibold shadow-tiket hover:brightness-110"
+          href="#">Daftar</a>
+        <button
+          class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-slate-200">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative">
+    <!-- Background image: replace URL below with your asset/screenshot for perfect match -->
+    <div class="absolute inset-0 -z-10">
+      <img src="https://images.pexels.com/photos/3201921/pexels-photo-3201921.jpeg" alt="Hotel room"
+        class="h-[70vh] md:h-[78vh] w-full object-cover" />
+      <!-- subtle top gradient like tiket.com -->
+      <div class="absolute inset-0 bg-gradient-to-b from-white to-white/10"></div>
+    </div>
+
+    <div class="mx-auto max-w-[120rem] px-4 sm:px-6 lg:px-8 pt-10 md:pt-16">
+      <!-- Right booking card -->
+      <div class="flex justify-end">
+        <div class="w-full md:max-w-xl lg:max-w-lg">
+          <!-- promo pill -->
+          <div
+            class="rounded-2xl bg-white/95 backdrop-blur border border-slate-200 shadow-md p-4 mb-3 flex items-start gap-3">
+            <div class="w-8 h-8 grid place-items-center rounded-full bg-blue-50 text-tiket.blue">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 1v22M1 12h22" />
+              </svg>
+            </div>
+            <div class="text-sm">
+              <p class="font-semibold">
+                Nginep
+                <span class="text-tiket.blue">mingguan atau bulanan</span>
+                jadi lebih hemat
+              </p>
+              <p class="text-slate-600">
+                dengan diskon hingga <span class="font-semibold">20%</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- search card -->
+          <div class="rounded-2xl bg-white/95 backdrop-blur border border-slate-200 shadow-xl">
+            <div class="p-3 sm:p-4 space-y-3">
+              <!-- destination -->
+              <label
+                class="flex items-center gap-3 rounded-xl border border-slate-200 px-3 sm:px-4 py-3 cursor-text focus-within:border-slate-300">
+                <svg class="w-5 h-5 text-slate-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <input class="w-full outline-none bg-transparent text-[15px] placeholder:text-slate-400"
+                  placeholder="Bogor" />
+                <button class="ml-auto grid place-items-center w-9 h-9 rounded-lg hover:bg-slate-100">
+                  <svg class="w-5 h-5 text-slate-600" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10 3a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0V7H8a1 1 0 110-2h1V4a1 1 0 011-1z" />
+                  </svg>
+                </button>
+              </label>
+
+              <!-- dates -->
+              <label
+                class="flex items-center gap-3 rounded-xl border border-slate-200 px-3 sm:px-4 py-3 cursor-text focus-within:border-slate-300">
+                <svg class="w-5 h-5 text-slate-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                <input class="w-full outline-none bg-transparent text-[15px] placeholder:text-slate-400"
+                  placeholder="12 Nov - 13 Nov" />
+              </label>
+
+              <!-- guests -->
+              <label
+                class="flex items-center gap-3 rounded-xl border border-slate-200 px-3 sm:px-4 py-3 cursor-text focus-within:border-slate-300">
+                <svg class="w-5 h-5 text-slate-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                <input class="w-full outline-none bg-transparent text-[15px] placeholder:text-slate-400"
+                  placeholder="1 Kamar, 1 Dewasa, 0 Anak" />
+              </label>
+
+              <button
+                class="w-full mt-2 rounded-xl bg-tiket.blue text-white font-semibold py-3 shadow-tiket hover:brightness-110">
+                Ayo Cari
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Big headline at bottom-left like screenshot -->
+      <div class="pt-24 md:pt-32 lg:pt-16">
+        <h1
+          class="max-w-5xl text-4xl sm:text-5xl md:text-6xl leading-tight font-extrabold text-white drop-shadow-[0_4px_24px_rgba(0,0,0,.35)]">
+          Booking hotel murah online<br class="hidden sm:block" />
+          dengan harga promo
+        </h1>
+      </div>
+    </div>
+  </section>
+  <!-- Page padding to show hero height -->
+  <div class="h-8 md:h-12"></div>
+
+  <!-- Riwayat Pencarian -->
+  <section class="mx-auto max-w-[120rem] px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-lg font-semibold text-slate-800">
+        Riwayat Pencarianmu
+      </h2>
+      <button class="text-sm font-medium text-tiket.blue hover:underline">
+        Hapus semua
+      </button>
+    </div>
+
+    <div class="flex flex-wrap gap-3">
+      <!-- Item riwayat -->
+      <a href="#"
+        class="group inline-flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-3 py-2 shadow-sm hover:shadow-md">
+        <div class="w-10 h-10 overflow-hidden rounded-xl bg-slate-200">
+          <img class="w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1600431521340-491eca880813?q=80&w=400&auto=format&fit=crop"
+            alt="Bogor" />
+        </div>
+        <div class="min-w-0">
+          <p class="text-sm font-semibold text-slate-900 truncate">
+            Bogor, Jawa Barat
+          </p>
+          <p class="text-[12px] text-slate-500 truncate">
+            12 Nov 25 - 13 Nov 25 • 1 Kamar, 1 Dewasa
+          </p>
+        </div>
+      </a>
+
+      <a href="#"
+        class="group inline-flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-3 py-2 shadow-sm hover:shadow-md">
+        <div class="w-10 h-10 overflow-hidden rounded-xl bg-slate-200">
+          <img class="w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1501117716987-c8e0bdde665a?q=80&w=400&auto=format&fit=crop"
+            alt="Hotel" />
+        </div>
+        <div class="min-w-0">
+          <p class="text-sm font-semibold text-slate-900 truncate">
+            Kartika One Hotel Jakarta
+          </p>
+          <p class="text-[12px] text-slate-500 truncate">
+            Jagakarsa, Jakarta Selatan
+          </p>
+        </div>
+      </a>
+
+      <a href="#"
+        class="group inline-flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-3 py-2 shadow-sm hover:shadow-md">
+        <div class="w-10 h-10 overflow-hidden rounded-xl bg-slate-200">
+          <img class="w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=400&auto=format&fit=crop"
+            alt="Jakarta" />
+        </div>
+        <div class="min-w-0">
+          <p class="text-sm font-semibold text-slate-900 truncate">
+            Jakarta, Indonesia
+          </p>
+          <p class="text-[12px] text-slate-500 truncate">
+            12 Nov 25 - 13 Nov 25 • 1 Kamar, 1 Dewasa
+          </p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <div class="h-8 md:h-10"></div>
+
+  <!-- Promoted Stay Section -->
+  <section class="mx-auto max-w-[120rem] px-4 sm:px-6 lg:px-8 pb-12">
+    <div
+      class="rounded-3xl bg-gradient-to-b from-orange-300 to-orange-200 p-5 sm:p-6 lg:p-8 shadow-[0_20px_50px_rgba(2,37,78,.15)]">
+      <!-- Header row -->
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span class="inline-grid place-items-center w-8 h-8 rounded-xl bg-white/70"><span
+              class="text-lg">🏨</span></span>
+          <h3 class="text-2xl font-extrabold text-slate-900">
+            Promoted Stay
+          </h3>
+        </div>
+        <div class="flex items-center gap-2 text-slate-800">
+          <span class="text-sm">Berakhir dalam</span>
+          <div class="flex items-center gap-1">
+            <span class="inline-flex w-10 justify-center rounded-lg bg-yellow-300 px-2 py-1 text-sm font-bold">09</span>
+            <span class="font-semibold">:</span>
+            <span class="inline-flex w-10 justify-center rounded-lg bg-yellow-300 px-2 py-1 text-sm font-bold">31</span>
+            <span class="font-semibold">:</span>
+            <span class="inline-flex w-10 justify-center rounded-lg bg-yellow-300 px-2 py-1 text-sm font-bold">01</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Destination chips -->
+      <div class="mt-5 flex flex-wrap gap-3">
+        <button class="px-4 py-2 rounded-full bg-white text-tiket.blue font-semibold shadow-sm">
+          Bogor
+        </button>
+        <button class="px-4 py-2 rounded-full bg-white/70 hover:bg-white text-slate-700 font-medium">
+          Surabaya
+        </button>
+        <button class="px-4 py-2 rounded-full bg-white/70 hover:bg-white text-slate-700 font-medium">
+          Bali
+        </button>
+        <button class="px-4 py-2 rounded-full bg-white/70 hover:bg-white text-slate-700 font-medium">
+          Lombok
+        </button>
+        <button class="px-4 py-2 rounded-full bg-white/70 hover:bg-white text-slate-700 font-medium">
+          Labuan Bajo
+        </button>
+        <button class="px-4 py-2 rounded-full bg-white/70 hover:bg-white text-slate-700 font-medium">
+          Canggu
+        </button>
+        <button class="px-4 py-2 rounded-full bg-white/70 hover:bg-white text-slate-700 font-medium">
+          Kuta
+        </button>
+        <button class="px-4 py-2 rounded-full bg-white/70 hover:bg-white text-slate-700 font-medium">
+          Ubud
+        </button>
+        <button class="px-4 py-2 rounded-full bg-white/70 hover:bg-white text-slate-700 font-medium">
+          Seminyak
+        </button>
+        <button class="px-4 py-2 rounded-full bg-white/70 hover:bg-white text-slate-700 font-medium">
+          Nusa Dua
+        </button>
+        <button class="px-4 py-2 rounded-full bg-white/70 hover:bg-white text-slate-700 font-medium">
+          Jimbaran
+        </button>
+        <button class="px-4 py-2 rounded-full bg-white/70 hover:bg-white text-slate-700 font-medium">
+          Malang
+        </button>
+        <button class="px-4 py-2 rounded-full bg-white/70 hover:bg-white text-slate-700 font-medium">
+          Gunung Kidul
+        </button>
+      </div>
+
+      <!-- Cards -->
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
+        <!-- Card template -->
+        <article class="rounded-2xl bg-white overflow-hidden shadow-md">
+          <div class="relative">
+            <img class="h-40 w-full object-cover"
+              src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop"
+              alt="Hotel" />
+            <div class="absolute top-3 left-3 text-xs font-bold bg-white/90 px-2 py-1 rounded-lg shadow">
+              Top Hotel 10
+            </div>
+          </div>
+          <div class="p-4">
+            <a href="#" class="block text-slate-900 font-semibold leading-snug hover:underline">The Alana Hotel and
+              Conference Sentul City …</a>
+            <div class="mt-1 flex items-center gap-1 text-orange-500">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4 text-slate-300" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+            </div>
+            <p class="mt-1 text-sm text-slate-600">Sentul, Bogor</p>
+            <p class="mt-2 text-xs font-medium text-slate-500">
+              4,5/5 (1.588)
+            </p>
+            <p class="mt-3 text-[13px] text-slate-500 line-through">
+              IDR 1.906.393
+            </p>
+            <p class="-mt-1 text-rose-600 font-extrabold">IDR 1.347.842</p>
+            <p class="text-[12px] text-slate-500">Belum termasuk pajak</p>
+          </div>
+        </article>
+
+        <!-- Duplicate 4 more cards with variant data/images -->
+        <article class="rounded-2xl bg-white overflow-hidden shadow-md">
+          <div class="relative">
+            <img class="h-40 w-full object-cover"
+              src="https://images.unsplash.com/photo-1501117716987-c8e0bdde665a?q=80&w=800&auto=format&fit=crop"
+              alt="Hotel" />
+            <div class="absolute top-3 left-3 text-xs font-bold bg-white/90 px-2 py-1 rounded-lg shadow">
+              Great Offer
+            </div>
+          </div>
+          <div class="p-4">
+            <a href="#" class="block text-slate-900 font-semibold leading-snug hover:underline">Pullman Ciawi Vimala
+              Hills Resort Spa &amp; Convention</a>
+            <div class="mt-1 flex items-center gap-1 text-orange-500">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4 text-slate-300" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4 text-slate-300" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+            </div>
+            <p class="mt-1 text-sm text-slate-600">Megamendung, Bogor</p>
+            <p class="mt-2 text-xs font-medium text-slate-500">
+              4,7/5 (2.353)
+            </p>
+            <p class="mt-3 text-[13px] text-slate-500 line-through">
+              IDR 1.406.843
+            </p>
+            <p class="-mt-1 text-rose-600 font-extrabold">IDR 1.200.000</p>
+            <p class="text-[12px] text-slate-500">Belum termasuk pajak</p>
+          </div>
+        </article>
+
+        <article class="rounded-2xl bg-white overflow-hidden shadow-md">
+          <div class="relative">
+            <img class="h-40 w-full object-cover"
+              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop"
+              alt="Hotel" />
+          </div>
+          <div class="p-4">
+            <a href="#" class="block text-slate-900 font-semibold leading-snug hover:underline">Aston Sentul Lake Resort
+              &amp; Conference Center</a>
+            <div class="mt-1 flex items-center gap-1 text-orange-500">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4 text-slate-300" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+            </div>
+            <p class="mt-1 text-sm text-slate-600">Sentul, Bogor</p>
+            <p class="mt-2 text-xs font-medium text-slate-500">
+              4,3/5 (1.702)
+            </p>
+            <p class="mt-3 text-[13px] text-slate-500 line-through">
+              IDR 1.906.393
+            </p>
+            <p class="-mt-1 text-rose-600 font-extrabold">IDR 1.606.843</p>
+            <p class="text-[12px] text-slate-500">Belum termasuk pajak</p>
+          </div>
+        </article>
+
+        <article class="rounded-2xl bg-white overflow-hidden shadow-md">
+          <div class="relative">
+            <img class="h-40 w-full object-cover"
+              src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=800&auto=format&fit=crop"
+              alt="Hotel" />
+            <div class="absolute top-3 left-3 text-xs font-bold bg-white/90 px-2 py-1 rounded-lg shadow">
+              Top Hotel 10
+            </div>
+          </div>
+          <div class="p-4">
+            <a href="#" class="block text-slate-900 font-semibold leading-snug hover:underline">Royal Safari Garden
+              Resorts and Convention</a>
+            <div class="mt-1 flex items-center gap-1 text-orange-500">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4 text-slate-300" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4 text-slate-300" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+            </div>
+            <p class="mt-1 text-sm text-slate-600">Puncak, Bogor</p>
+            <p class="mt-2 text-xs font-medium text-slate-500">
+              4,3/5 (3.898)
+            </p>
+            <p class="mt-3 text-[13px] text-slate-500 line-through">
+              IDR 1.096.393
+            </p>
+            <p class="-mt-1 text-rose-600 font-extrabold">IDR 972.243</p>
+            <p class="text-[12px] text-slate-500">Belum termasuk pajak</p>
+          </div>
+        </article>
+
+        <article class="rounded-2xl bg-white overflow-hidden shadow-md">
+          <div class="relative">
+            <img class="h-40 w-full object-cover"
+              src="https://images.unsplash.com/photo-1496412705862-e0088f16f791?q=80&w=800&auto=format&fit=crop"
+              alt="Hotel" />
+            <div class="absolute top-3 left-3 text-xs font-bold bg-white/90 px-2 py-1 rounded-lg shadow">
+              Top Hotel 10
+            </div>
+            <button class="absolute right-3 top-3 grid place-items-center w-9 h-9 rounded-full bg-white/90 shadow">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+          <div class="p-4">
+            <a href="#" class="block text-slate-900 font-semibold leading-snug hover:underline">Grand Aston Puncak Hotel
+              &amp; Resort</a>
+            <div class="mt-1 flex items-center gap-1 text-orange-500">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4 text-slate-300" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+              <svg class="w-4 h-4 text-slate-300" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.786 1.401 8.168L12 18.896 4.665 23.165l1.401-8.168L.132 9.211l8.2-1.193z" />
+              </svg>
+            </div>
+            <p class="mt-1 text-sm text-slate-600">Puncak, Bogor</p>
+            <p class="mt-2 text-xs font-medium text-slate-500">
+              4,5/5 (2.038)
+            </p>
+            <p class="mt-3 text-[13px] text-slate-500 line-through">
+              IDR 1.384.225
+            </p>
+            <p class="-mt-1 text-rose-600 font-extrabold">IDR 985.433</p>
+            <p class="text-[12px] text-slate-500">Belum termasuk pajak</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- CTA Lihat semua -->
+      <div class="mt-8 flex justify-center">
+        <a href="#"
+          class="inline-flex items-center justify-center rounded-xl bg-white/90 px-5 py-3 text-tiket.blue font-semibold shadow hover:bg-white">Lihat
+          semua</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kategori ikon (Top picks, Nginep hemat, dll.) -->
+  <section class="mx-auto max-w-[120rem] px-4 sm:px-6 lg:px-8 pb-6">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+      <!-- item -->
+      <a href="#" class="group flex flex-col items-center gap-3">
+        <span class="grid place-items-center w-20 h-20 rounded-full bg-white shadow-md border border-slate-200">
+          <img class="w-10 h-10" src="https://cdn-icons-png.flaticon.com/512/482/482060.png" alt="Top picks" />
+        </span>
+        <span class="text-sm font-semibold text-slate-800">Top picks</span>
+      </a>
+      <a href="#" class="group flex flex-col items-center gap-3">
+        <span class="grid place-items-center w-20 h-20 rounded-full bg-white shadow-md border border-slate-200">
+          <img class="w-10 h-10" src="https://cdn-icons-png.flaticon.com/512/992/992700.png" alt="Nginep hemat" />
+        </span>
+        <span class="text-sm font-semibold text-slate-800">Nginep hemat</span>
+      </a>
+      <a href="#" class="group flex flex-col items-center gap-3">
+        <span class="grid place-items-center w-20 h-20 rounded-full bg-white shadow-md border border-slate-200">
+          <img class="w-10 h-10" src="https://cdn-icons-png.flaticon.com/512/2331/2331970.png" alt="Hotel mewah" />
+        </span>
+        <span class="text-sm font-semibold text-slate-800">Hotel mewah</span>
+      </a>
+      <a href="#" class="group flex flex-col items-center gap-3">
+        <span class="grid place-items-center w-20 h-20 rounded-full bg-white shadow-md border border-slate-200">
+          <img class="w-10 h-10" src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Preferred Partner" />
+        </span>
+        <span class="text-sm font-semibold text-slate-800">Preferred Partner</span>
+      </a>
+      <a href="#" class="group flex flex-col items-center gap-3">
+        <span class="grid place-items-center w-20 h-20 rounded-full bg-white shadow-md border border-slate-200">
+          <img class="w-10 h-10" src="https://cdn-icons-png.flaticon.com/512/1055/1055644.png" alt="Hidden gems" />
+        </span>
+        <span class="text-sm font-semibold text-slate-800">Hidden gems</span>
+      </a>
+      <a href="#" class="group flex flex-col items-center gap-3">
+        <span class="grid place-items-center w-20 h-20 rounded-full bg-white shadow-md border border-slate-200">
+          <img class="w-10 h-10" src="https://cdn-icons-png.flaticon.com/512/1533/1533913.png" alt="Ramah anak" />
+        </span>
+        <span class="text-sm font-semibold text-slate-800">Ramah anak</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Promo hotel di Indonesia -->
+  <section class="mx-auto max-w-[120rem] px-4 sm:px-6 lg:px-8 pb-12">
+    <!-- heading -->
+    <div class="flex items-center gap-2 mb-1">
+      <span class="grid place-items-center w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700">🏨</span>
+      <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900">
+        Promo hotel di Indonesia
+      </h3>
+    </div>
+    <p class="text-sm text-slate-600 mb-4">
+      Nginep di hotel pilihan, diskon hingga 30% + cashback hingga IDR
+      250.000.
+    </p>
+
+    <!-- chips kota -->
+    <div class="flex flex-wrap gap-3 mb-6">
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Legian
+      </button>
+      <button
+        class="px-4 py-2 rounded-full bg-white text-tiket.blue font-semibold border border-tiket.blue/30 shadow-sm">
+        Jakarta
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Surabaya
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Bandung
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Nusa Dua
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Semarang
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Lombok
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Banten
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Seminyak
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Yogyakarta
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Budget Bash
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Vila & Apt.
+      </button>
+    </div>
+
+    <!-- grid cards promo -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
+      <!-- Card 1 -->
+      <article class="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm">
+        <div class="relative">
+          <img class="h-40 w-full object-cover"
+            src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=800&auto=format&fit=crop"
+            alt="Hotel" />
+          <div
+            class="absolute top-2 left-2 text-[11px] font-bold bg-amber-100 text-amber-900 px-2 py-0.5 rounded-lg border border-amber-200">
+            Top Hotel 9
+          </div>
+        </div>
+        <div class="p-4">
+          <a href="#" class="block font-semibold text-slate-900 leading-snug hover:underline">MaxOneHotels at Platinum
+            Hayam Wuruk…</a>
+          <div class="mt-1 text-orange-500">⭐⭐⭐</div>
+          <p class="text-sm text-slate-600">Gambir, Jakarta Pusat</p>
+          <p class="mt-1 text-xs text-slate-500">4,5/5 (4.053)</p>
+          <p class="mt-3 text-[13px] text-slate-500 line-through">
+            IDR 459.107
+          </p>
+          <p class="-mt-1 text-rose-600 font-extrabold">IDR 410.797</p>
+          <p class="text-[12px] text-slate-500">Belum termasuk pajak</p>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm">
+        <div class="relative">
+          <img class="h-40 w-full object-cover"
+            src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop"
+            alt="Hotel" />
+        </div>
+        <div class="p-4">
+          <a href="#" class="block font-semibold text-slate-900 leading-snug hover:underline">Liberty Hotel Thamrin
+            Jakarta</a>
+          <div class="mt-1 text-orange-500">⭐⭐⭐</div>
+          <p class="text-sm text-slate-600">Tanah Abang, Jakarta Pusat</p>
+          <p class="mt-1 text-xs text-slate-500">4,6/5 (889)</p>
+          <p class="mt-3 text-[13px] text-slate-500 line-through">
+            IDR 789.000
+          </p>
+          <p class="-mt-1 text-rose-600 font-extrabold">IDR 631.018</p>
+          <p class="text-[12px] text-slate-500">Belum termasuk pajak</p>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm">
+        <div class="relative">
+          <img class="h-40 w-full object-cover"
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop"
+            alt="Hotel" />
+          <div
+            class="absolute top-2 left-2 text-[11px] font-bold bg-yellow-200 text-yellow-900 px-2 py-0.5 rounded-lg border border-yellow-300">
+            Great Offer
+          </div>
+        </div>
+        <div class="p-4">
+          <a href="#" class="block font-semibold text-slate-900 leading-snug hover:underline">Mercure Jakarta Pantai
+            Indah Kapuk</a>
+          <div class="mt-1 text-orange-500">⭐⭐⭐⭐</div>
+          <p class="text-sm text-slate-600">Penjaringan, Jakarta</p>
+          <p class="mt-1 text-xs text-slate-500">4,5/5 (1.082)</p>
+          <p class="mt-3 text-[13px] text-slate-500 line-through">
+            IDR 1.880.000
+          </p>
+          <p class="-mt-1 text-rose-600 font-extrabold">IDR 1.610.000</p>
+          <p class="text-[12px] text-slate-500">Belum termasuk pajak</p>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm">
+        <div class="relative">
+          <img class="h-40 w-full object-cover"
+            src="https://images.unsplash.com/photo-1502920917128-1aa500764ce7?q=80&w=800&auto=format&fit=crop"
+            alt="Hotel" />
+        </div>
+        <div class="p-4">
+          <a href="#" class="block font-semibold text-slate-900 leading-snug hover:underline">Hotel Daily Inn</a>
+          <div class="mt-1 text-orange-500">⭐⭐⭐</div>
+          <p class="text-sm text-slate-600">Cempaka Putih, Jakarta Pusat</p>
+          <p class="mt-1 text-xs text-slate-500">4,4/5 (1.421)</p>
+          <p class="mt-3 text-[13px] text-slate-500 line-through">
+            IDR 406.078
+          </p>
+          <p class="-mt-1 text-rose-600 font-extrabold">IDR 351.409</p>
+          <p class="text-[12px] text-slate-500">Belum termasuk pajak</p>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm">
+        <div class="relative">
+          <img class="h-40 w-full object-cover"
+            src="https://images.unsplash.com/photo-1496412705862-e0088f16f791?q=80&w=800&auto=format&fit=crop"
+            alt="Hotel" />
+          <button class="absolute right-2 top-2 grid place-items-center w-9 h-9 rounded-full bg-white/90 shadow">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+        <div class="p-4">
+          <a href="#" class="block font-semibold text-slate-900 leading-snug hover:underline">Swiss-Belhotel Pondok
+            Indah</a>
+          <div class="mt-1 text-orange-500">⭐⭐⭐⭐</div>
+          <p class="text-sm text-slate-600">Kebayoran Lama, Jakarta</p>
+          <p class="mt-1 text-xs text-slate-500">4,4/5 (1.675)</p>
+          <p class="mt-3 text-[13px] text-slate-500 line-through">
+            IDR 771.950
+          </p>
+          <p class="-mt-1 text-rose-600 font-extrabold">IDR 729.102</p>
+          <p class="text-[12px] text-slate-500">Belum termasuk pajak</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-8 flex justify-center">
+      <a href="#"
+        class="inline-flex items-center justify-center rounded-xl bg-tiket.blue text-white px-6 py-3 font-semibold shadow-tiket hover:brightness-110">Lihat
+        semua</a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-[120rem] px-4 sm:px-6 lg:px-8 pb-12">
+    <!-- heading -->
+    <div class="flex items-center gap-2 mb-1">
+      <span class="grid place-items-center w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700">🏨</span>
+      <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900">
+        Trip hemat ke luar negeri
+      </h3>
+    </div>
+    <p class="text-sm text-slate-600 mb-4">
+      Pesan hotelnya pake diskon hingga 30% + cashback hingga IDR 250.000.
+    </p>
+
+    <!-- chips kota -->
+    <div class="flex flex-wrap gap-3 mb-6">
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Legian
+      </button>
+      <button
+        class="px-4 py-2 rounded-full bg-white text-tiket.blue font-semibold border border-tiket.blue/30 shadow-sm">
+        Jakarta
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Surabaya
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Bandung
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Nusa Dua
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Semarang
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Lombok
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Banten
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Seminyak
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Yogyakarta
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Budget Bash
+      </button>
+      <button class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-medium">
+        Vila & Apt.
+      </button>
+    </div>
+
+    <!-- grid cards promo -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
+      <!-- Card 1 -->
+      <article class="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm">
+        <div class="relative">
+          <img class="h-40 w-full object-cover"
+            src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=800&auto=format&fit=crop"
+            alt="Hotel" />
+          <div
+            class="absolute top-2 left-2 text-[11px] font-bold bg-amber-100 text-amber-900 px-2 py-0.5 rounded-lg border border-amber-200">
+            Top Hotel 9
+          </div>
+        </div>
+        <div class="p-4">
+          <a href="#" class="block font-semibold text-slate-900 leading-snug hover:underline">MaxOneHotels at Platinum
+            Hayam Wuruk…</a>
+          <div class="mt-1 text-orange-500">⭐⭐⭐</div>
+          <p class="text-sm text-slate-600">Gambir, Jakarta Pusat</p>
+          <p class="mt-1 text-xs text-slate-500">4,5/5 (4.053)</p>
+          <p class="mt-3 text-[13px] text-slate-500 line-through">
+            IDR 459.107
+          </p>
+          <p class="-mt-1 text-rose-600 font-extrabold">IDR 410.797</p>
+          <p class="text-[12px] text-slate-500">Belum termasuk pajak</p>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm">
+        <div class="relative">
+          <img class="h-40 w-full object-cover"
+            src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop"
+            alt="Hotel" />
+        </div>
+        <div class="p-4">
+          <a href="#" class="block font-semibold text-slate-900 leading-snug hover:underline">Liberty Hotel Thamrin
+            Jakarta</a>
+          <div class="mt-1 text-orange-500">⭐⭐⭐</div>
+          <p class="text-sm text-slate-600">Tanah Abang, Jakarta Pusat</p>
+          <p class="mt-1 text-xs text-slate-500">4,6/5 (889)</p>
+          <p class="mt-3 text-[13px] text-slate-500 line-through">
+            IDR 789.000
+          </p>
+          <p class="-mt-1 text-rose-600 font-extrabold">IDR 631.018</p>
+          <p class="text-[12px] text-slate-500">Belum termasuk pajak</p>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm">
+        <div class="relative">
+          <img class="h-40 w-full object-cover"
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop"
+            alt="Hotel" />
+          <div
+            class="absolute top-2 left-2 text-[11px] font-bold bg-yellow-200 text-yellow-900 px-2 py-0.5 rounded-lg border border-yellow-300">
+            Great Offer
+          </div>
+        </div>
+        <div class="p-4">
+          <a href="#" class="block font-semibold text-slate-900 leading-snug hover:underline">Mercure Jakarta Pantai
+            Indah Kapuk</a>
+          <div class="mt-1 text-orange-500">⭐⭐⭐⭐</div>
+          <p class="text-sm text-slate-600">Penjaringan, Jakarta</p>
+          <p class="mt-1 text-xs text-slate-500">4,5/5 (1.082)</p>
+          <p class="mt-3 text-[13px] text-slate-500 line-through">
+            IDR 1.880.000
+          </p>
+          <p class="-mt-1 text-rose-600 font-extrabold">IDR 1.610.000</p>
+          <p class="text-[12px] text-slate-500">Belum termasuk pajak</p>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm">
+        <div class="relative">
+          <img class="h-40 w-full object-cover"
+            src="https://images.unsplash.com/photo-1502920917128-1aa500764ce7?q=80&w=800&auto=format&fit=crop"
+            alt="Hotel" />
+        </div>
+        <div class="p-4">
+          <a href="#" class="block font-semibold text-slate-900 leading-snug hover:underline">Hotel Daily Inn</a>
+          <div class="mt-1 text-orange-500">⭐⭐⭐</div>
+          <p class="text-sm text-slate-600">Cempaka Putih, Jakarta Pusat</p>
+          <p class="mt-1 text-xs text-slate-500">4,4/5 (1.421)</p>
+          <p class="mt-3 text-[13px] text-slate-500 line-through">
+            IDR 406.078
+          </p>
+          <p class="-mt-1 text-rose-600 font-extrabold">IDR 351.409</p>
+          <p class="text-[12px] text-slate-500">Belum termasuk pajak</p>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm">
+        <div class="relative">
+          <img class="h-40 w-full object-cover"
+            src="https://images.unsplash.com/photo-1496412705862-e0088f16f791?q=80&w=800&auto=format&fit=crop"
+            alt="Hotel" />
+          <button class="absolute right-2 top-2 grid place-items-center w-9 h-9 rounded-full bg-white/90 shadow">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+        <div class="p-4">
+          <a href="#" class="block font-semibold text-slate-900 leading-snug hover:underline">Swiss-Belhotel Pondok
+            Indah</a>
+          <div class="mt-1 text-orange-500">⭐⭐⭐⭐</div>
+          <p class="text-sm text-slate-600">Kebayoran Lama, Jakarta</p>
+          <p class="mt-1 text-xs text-slate-500">4,4/5 (1.675)</p>
+          <p class="mt-3 text-[13px] text-slate-500 line-through">
+            IDR 771.950
+          </p>
+          <p class="-mt-1 text-rose-600 font-extrabold">IDR 729.102</p>
+          <p class="text-[12px] text-slate-500">Belum termasuk pajak</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-8 flex justify-center">
+      <a href="#"
+        class="inline-flex items-center justify-center rounded-xl bg-tiket.blue text-white px-6 py-3 font-semibold shadow-tiket hover:brightness-110">Lihat
+        semua</a>
+    </div>
+  </section>
+
+  <!-- section banner penawaran -->
+  <section class="py-10">
+    <div class="mx-auto max-w-[1280px] px-6">
+      <!-- Top row: 3 banner cards -->
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <!-- Banner 1 -->
+        <a class="block rounded-[20px] bg-slate-100 shadow-sm ring-1 ring-slate-200 overflow-hidden">
+          <img
+            src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit720360gsm/mobile-modules/2025/10/06/8cded79d-bca8-4eeb-aefb-c341e491a5db-1759728614890-c7f4f67565d31de1d815bf900a599704.png"
+            alt="Banner 1" class="h-[200px] w-full object-cover" />
+        </a>
+        <!-- Banner 2 -->
+        <a class="block rounded-[20px] bg-slate-100 shadow-sm ring-1 ring-slate-200 overflow-hidden">
+          <img
+            src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit720360gsm/mobile-modules/2025/09/10/6d7828f0-53c2-4f03-b142-87b0e6d39095-1757493915630-9bf66cdc19582966f13a98a0a5b4127d.png"
+            alt="Banner 2" class="h-[200px] w-full object-cover" />
+        </a>
+        <!-- Banner 3 -->
+        <a class="block rounded-[20px] bg-slate-100 shadow-sm ring-1 ring-slate-200 overflow-hidden">
+          <img
+            src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit720360gsm/mobile-modules/2025/09/10/59409259-5ea3-4f06-9005-dfcf67719e2a-1757493963267-e310b8d0fb95c715913258067d9ba1f6.png"
+            alt="Banner 3" class="h-[200px] w-full object-cover" />
+        </a>
+      </div>
+
+      <!-- Title + icon -->
+      <div class="mt-14 flex items-start gap-5">
+        <span class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-white shadow">
+          <svg
+            xmlns="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-mobile/promo/2025/08/05/6e3cfc33-6b2b-44dc-bea2-d0198d826d17-1754399396198-83a5804233d68e6e5986de3612d17a9d.png"
+            viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+            <path fill-rule="evenodd"
+              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l.563 1.356a1.75 1.75 0 001.288 1.05l1.46.273c1.155.216 1.62 1.59.93 2.51l-.89 1.188c-.38.507-.38 1.19 0 1.698l.89 1.188c.69.92.224 2.294-.93 2.51l-1.46.273a1.75 1.75 0 00-1.288 1.05l-.563 1.356c-.448 1.077-1.976 1.077-2.424 0l-.563-1.356a1.75 1.75 0 00-1.288-1.05l-1.46-.273c-1.155-.216-1.62-1.59-.93-2.51l.89-1.188c.38-.508.38-1.19 0-1.698l-.89-1.188c-.69-.92-.224-2.294.93-2.51l1.46-.273a1.75 1.75 0 001.288-1.05l.563-1.356zM10.5 8.25a.75.75 0 00-1.5 0v5.25a.75.75 0 001.5 0V8.25zm4.5 0a.75.75 0 00-1.5 0v5.25a.75.75 0 001.5 0V8.25z"
+              clip-rule="evenodd" />
+          </svg>
+        </span>
+        <div>
+          <h2 class="text-[44px] leading-[1.05] font-extrabold tracking-tight">
+            Penawaran menarik<br />buatmu
+          </h2>
+        </div>
+      </div>
+
+      <!-- Bottom row: carousel-look with exactly 3 images (2 penuh + 1 kepotong) -->
+      <div class="mt-8">
+        <!-- visual row: we purposely set a max width so only 2.5 kartu terlihat -->
+        <div class="relative">
+          <div class="overflow-hidden rounded-[18px]">
+            <div class="flex gap-6 w-max">
+              <!-- Card width fixed agar proporsinya mirip -->
+              <a class="block w-[620px] rounded-[18px] bg-slate-100 shadow-sm ring-1 ring-slate-200 overflow-hidden">
+                <img
+                  src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-mobile/promo/2025/08/05/6e3cfc33-6b2b-44dc-bea2-d0198d826d17-1754399396198-83a5804233d68e6e5986de3612d17a9d.png"
+                  alt="Offer 1" class="h-[240px] w-full object-cover" />
+              </a>
+              <a class="block w-[620px] rounded-[18px] bg-slate-100 shadow-sm ring-1 ring-slate-200 overflow-hidden">
+                <img
+                  src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-mobile/promo/2025/11/04/a98876ce-39be-4b21-8600-a7f7a4a8315c-1762241446137-da2a45d8450fcbc1626233143b5c82be.png"
+                  alt="Offer 2" class="h-[240px] w-full object-cover" />
+              </a>
+              <a class="block w-[620px] rounded-[18px] bg-slate-100 shadow-sm ring-1 ring-slate-200 overflow-hidden">
+                <img
+                  src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-mobile/promo/2025/11/03/dd3ae5f5-9a15-4113-8454-b4f2c2c4dfa8-1762140708030-424613fb4e9a3a36fc7d2d4f751e2a6f.png"
+                  alt="Offer 3" class="h-[240px] w-full object-cover" />
+              </a>
+            </div>
+          </div>
+          <!-- Mask agar kartu ketiga terlihat sebagian -->
+          <div class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white"
+            aria-hidden="true"></div>
+        </div>
+
+        <!-- Controls row -->
+        <div class="mt-6 flex items-center justify-between">
+          <!-- arrows -->
+          <div class="flex gap-4">
+            <button
+              class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white ring-1 ring-slate-200 shadow">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" class="h-5 w-5">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <button
+              class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white ring-1 ring-slate-200 shadow">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" class="h-5 w-5">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- progress bar -->
+          <div class="flex-1 px-8">
+            <div class="mx-auto h-2 max-w-[420px] rounded-full bg-slate-200">
+              <div class="h-full w-[45%] rounded-full bg-slate-600"></div>
+            </div>
+          </div>
+
+          <!-- page indicator -->
+          <div class="w-24 text-right text-slate-600 font-semibold">1/10</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- section inspirasi liburan -->
+
+  <!-- SECTION: Inspirasi Liburan (section-inspirasi-liburan) -->
+<section id="section-inspirasi-liburan" class="py-10">
+<div class="mx-auto max-w-[1320px] px-6">
+<header class="mb-5">
+<h2 class="text-[32px] md:text-[40px] font-extrabold leading-tight tracking-tight">Inspirasi untuk liburanmu selanjutnya</h2>
+<p class="mt-1 text-slate-500">Cek inspirasi liburan di Indonesia maupun luar negeri, yuk!</p>
+</header>
+
+
+<!-- Row kartu 4 kolom seperti screenshot -->
+<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-4">
+<!-- Card 1 -->
+<a href="#" class="relative block overflow-hidden rounded-[22px] shadow-sm ring-1 ring-slate-200 bg-white">
+<img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1600&auto=format&fit=crop" alt="Mau nginep di mana?" class="h-[280px] md:h-[300px] w-full object-cover" />
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<div class="absolute bottom-6 left-0 right-0 px-6">
+<p class="text-center text-[22px] md:text-[26px] font-extrabold leading-tight text-white">Mau nginep di<br/>mana?</p>
+</div>
+</a>
+
+
+<!-- Card 2 -->
+<a href="#" class="relative block overflow-hidden rounded-[22px] shadow-sm ring-1 ring-slate-200 bg-white">
+<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1600&auto=format&fit=crop" alt="Kumpul-kumpul seru di Vila & Apt." class="h-[280px] md:h-[300px] w-full object-cover" />
+<div class="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-emerald-900/30 to-transparent"></div>
+<div class="absolute bottom-6 left-0 right-0 px-6">
+<p class="text-center text-[22px] md:text-[26px] font-extrabold leading-tight text-white">Kumpul-kumpul seru<br/>di Vila & Apt.</p>
+</div>
+</a>
+
+
+<!-- Card 3 -->
+<a href="#" class="relative block overflow-hidden rounded-[22px] shadow-sm ring-1 ring-slate-200 bg-white">
+<img src="https://images.unsplash.com/photo-1522156373667-4c7234bbd804?q=80&w=1600&auto=format&fit=crop" alt="Staycation, yuk!" class="h-[280px] md:h-[300px] w-full object-cover" />
+<div class="absolute inset-0 bg-gradient-to-t from-sky-900/80 via-sky-900/30 to-transparent"></div>
+<div class="absolute bottom-6 left-0 right-0 px-6">
+<p class="text-center text-[22px] md:text-[26px] font-extrabold leading-tight text-white">Staycation, yuk!</p>
+</div>
+</a>
+
+
+<!-- Card 4 -->
+<a href="#" class="relative block overflow-hidden rounded-[22px] shadow-sm ring-1 ring-slate-200 bg-white">
+<img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-mobile/mobile-modules/2024/07/08/7598ce6c-30c5-4667-bbf9-a8bdda800d98-1720373638410-e6754eec474c3ea18e19bf36ac8a447c.png" alt="Akomodasi nyaman dekat Taman Hiburan" class="h-[280px] md:h-[300px] w-full object-cover" />
+<div class="absolute inset-0 bg-gradient-to-t from-sky-900/80 via-sky-900/30 to-transparent"></div>
+<div class="absolute bottom-6 left-0 right-0 px-6">
+<p class="text-center text-[22px] md:text-[26px] font-extrabold leading-tight text-white">Akomodasi nyaman<br/>dekat Taman Hiburan</p>
+</div>
+</a>
+</div>
+
+
+<!-- Btn panah kanan mengambang, posisi mirip -->
+<button aria-label="Next" class="hidden xl:flex absolute right-8 mt-[-180px] h-12 w-12 items-center justify-center rounded-full bg-white shadow ring-1 ring-slate-200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M9 18l6-6-6-6"/></svg>
+</button>
+</div>
+</section>
+
+
+  <!-- SECTION: Destinasi Favorit (section-destinasi-favorit) -->
+  <section id="section-destinasi-favorit" class="py-12">
+    <div class="mx-auto max-w-[1280px] px-6">
+      <header class="mb-6">
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Nginap asyik di destinasi favorit</h2>
+        <p class="mt-2 text-slate-500">Saatnya kasih reward ke diri sendiri dengan rileks di hotel di berbagai destinasi
+          domestik menarik.</p>
+      </header>
+
+
+      <!-- Grid 6 destinasi -->
+      <div class="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+        <!-- Bandung -->
+        <div>
+          <a href="#" class="block overflow-hidden rounded-[16px] ring-1 ring-slate-200 shadow-sm">
+            <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-mobile/mobile-modules/2023/01/13/433348f6-cc8b-4b66-8800-1d278e248b11-1673605154738-241be705f6f01cb649209aa08df0845c.jpg"
+              alt="Bandung" class="h-[240px] w-full object-cover" />
+          </a>
+          <h4 class="mt-3 text-lg font-semibold">Bandung</h4>
+        </div>
+        <!-- Jakarta -->
+        <div>
+          <a href="#" class="block overflow-hidden rounded-[16px] ring-1 ring-slate-200 shadow-sm">
+            <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-mobile/mobile-modules/2023/01/13/87f58f9d-12f4-4ef9-a0e6-b0034dda1eb8-1673605212160-344a1386677958e1455c45bd140d5802.jpg"
+              alt="Jakarta" class="h-[240px] w-full object-cover" />
+          </a>
+          <h4 class="mt-3 text-lg font-semibold">Jakarta</h4>
+        </div>
+        <!-- Bogor -->
+        <div>
+          <a href="#" class="block overflow-hidden rounded-[16px] ring-1 ring-slate-200 shadow-sm">
+            <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-mobile/mobile-modules/2023/01/13/e7e555ff-abfe-4032-966d-4ff9c18c8e2a-1673605227190-93fd59f6516cd09b1bc2ac4a173c3931.jpg"
+              alt="Bogor" class="h-[240px] w-full object-cover" />
+          </a>
+          <h4 class="mt-3 text-lg font-semibold">Bogor</h4>
+        </div>
+        <!-- Yogyakarta -->
+        <div>
+          <a href="#" class="block overflow-hidden rounded-[16px] ring-1 ring-slate-200 shadow-sm">
+            <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-mobile/mobile-modules/2023/01/13/ba9cf207-28ad-4902-b702-a9c53af46a6f-1673605241480-e11d49e2092005ac59f44049813452ef.jpg"
+              alt="Yogyakarta" class="h-[240px] w-full object-cover" />
+          </a>
+          <h4 class="mt-3 text-lg font-semibold">Yogyakarta</h4>
+        </div>
+        <!-- Surabaya -->
+        <div>
+          <a href="#" class="block overflow-hidden rounded-[16px] ring-1 ring-slate-200 shadow-sm">
+            <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-mobile/mobile-modules/2023/01/13/54e0501c-b830-4cca-8008-5f363d89cc0b-1673605255349-46e2964a64a073898e7ce7a4eb8a70f9.jpg"
+              alt="Surabaya" class="h-[240px] w-full object-cover" />
+          </a>
+          <h4 class="mt-3 text-lg font-semibold">Surabaya</h4>
+        </div>
+        <!-- Bali -->
+        <div>
+          <a href="#" class="block overflow-hidden rounded-[16px] ring-1 ring-slate-200 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1600&auto=format&fit=crop"
+              alt="Bali" class="h-[240px] w-full object-cover" />
+          </a>
+          <h4 class="mt-3 text-lg font-semibold">Bali</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- SECTION: Download Aplikasi (section-download-app) -->
+<section>
+  <div class="mx-auto max-w-[1280px] px-6">
+<div class="relative overflow-hidden rounded-[24px] bg-gradient-to-r from-sky-50 via-white to-sky-50 ring-1 ring-slate-200 shadow">
+<div class="grid grid-cols-1 items-center gap-6 p-6 md:grid-cols-2 md:p-10">
+<!-- Left copy -->
+<div>
+<h3 class="text-3xl md:text-4xl font-extrabold leading-tight">Download aplikasi untuk dapetin banyak keuntungan!</h3>
+<ul class="mt-4 space-y-2 text-slate-700">
+<li class="flex items-start gap-3"><span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-white">✓</span><span>Promo khusus cuma di aplikasi</span></li>
+<li class="flex items-start gap-3"><span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-white">✓</span><span>Penawaran harga terbaik</span></li>
+<li class="flex items-start gap-3"><span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-white">✓</span><span>Benefit perjalanan</span></li>
+<li class="flex items-start gap-3"><span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-white">✓</span><span>Asuransi perjalanan GRATIS</span></li>
+</ul>
+
+
+<!-- Store badges (stylized) -->
+<div class="mt-5 flex flex-wrap gap-3">
+<a href="#" class="inline-flex items-center gap-2 rounded-lg bg-black px-4 py-2 text-white shadow">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M16.365 1.43c.13 1.54-.45 2.84-1.23 3.73-.78.89-1.96 1.58-3.19 1.47-.15-1.48.51-2.86 1.3-3.74.8-.88 2.15-1.57 3.12-1.46zM20.78 17.21c-.67 1.52-1.47 3.02-2.64 3.03-1.16.01-1.54-.98-3.22-.98-1.68 0-2.1.95-3.25 1-1.31.05-2.31-1.64-3-3.15-1.64-3.53-1.82-7.68-.81-9.86.9-1.98 2.93-3.24 5-3.27 1.17-.02 2.28.52 3.04.52.76 0 2.09-.64 3.53-.55.6.03 2.29.24 3.37 1.8-.09.06-2.01 1.18-1.98 3.52.03 2.8 2.43 3.74 2.46 3.76-.03.09-.39 1.36-1.3 3.18z"/></svg>
+<span class="text-sm font-semibold">App Store</span>
+</a>
+<a href="#" class="inline-flex items-center gap-2 rounded-lg bg-black px-4 py-2 text-white shadow">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M3 2l13 10L3 22V2zm14.5 3.5L21 8l-3.5 2.5L15 8l2.5-2.5zM21 16l-3.5 2.5L15 16l2.5-2.5L21 16z"/></svg>
+<span class="text-sm font-semibold">Google Play</span>
+</a>
+</div>
+</div>
+
+
+<!-- Right illustration area: QR + objects -->
+<div class="relative flex items-center justify-center">
+<div class="relative h-[260px] w-[260px] rotate-[-6deg] rounded-2xl bg-white p-4 shadow-2xl ring-1 ring-slate-200">
+<div class="flex h-full w-full items-center justify-center rounded-lg bg-slate-100 text-slate-500">QR Code</div>
+<p class="absolute -top-4 right-0 rounded-full bg-white px-4 py-2 text-sm font-semibold shadow ring-1 ring-slate-200">Benefit spesial di aplikasi 🎉</p>
+</div>
+<!-- decorative circles -->
+<div class="absolute -z-10 h-56 w-56 rounded-full bg-sky-100 blur-2xl"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SECTION: Partner Hotel (section-partner-hotel) -->
+<section id="section-partner-hotel" class="bg-slate-50 py-12">
+<div class="mx-auto max-w-[1280px] px-6">
+<header class="mb-6">
+<h3 class="text-2xl md:text-3xl font-extrabold tracking-tight">Partner hotel resmi dan terpercaya</h3>
+<p class="mt-2 text-slate-500">Siap memberimu pengalaman nginep yang seru dan tak terlupa.</p>
+</header>
+
+
+<!-- logos row: 6 cards -->
+<div class="relative">
+<div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
+<!-- Each logo card -->
+<div class="flex items-center justify-center rounded-[18px] bg-white p-6 shadow ring-1 ring-slate-200">
+<img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-mobile/mobile-modules/2025/11/04/dbfbbc57-65c4-4698-baf5-01856b506da4-1762231594256-8d4e4b6aca7b53985a1036bc9adf4921.png" class="h-14" alt="Accor"/>
+</div>
+<div class="flex items-center justify-center rounded-[18px] bg-white p-6 shadow ring-1 ring-slate-200">
+<img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-mobile/mobile-modules/2025/10/08/87ab3b00-2879-4f38-99ad-e0af080e8a41-1759904613606-f7cc46d8294815340f2b6c56eac91921.png" class="h-10" alt="Jumeirah"/>
+</div>
+<div class="flex items-center justify-center rounded-[18px] bg-white p-6 shadow ring-1 ring-slate-200">
+<img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-mobile/mobile-modules/2025/10/08/87ab3b00-2879-4f38-99ad-e0af080e8a41-1759904613606-f7cc46d8294815340f2b6c56eac91921.png" class="h-10" alt="Shangri-La"/>
+</div>
+<div class="flex items-center justify-center rounded-[18px] bg-white p-6 shadow ring-1 ring-slate-200">
+<img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-mobile/mobile-modules/2023/02/10/1b0682ee-62c5-439b-91a6-37c9b6df3afe-1676024104188-7de702f49f18fccceec9b271043531cd.png" class="h-10" alt="Ascott"/>
+</div>
+<div class="flex items-center justify-center rounded-[18px] bg-white p-6 shadow ring-1 ring-slate-200">
+<img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-mobile/mobile-modules/2023/02/10/b1a3d4b7-7693-423b-9685-383f95bd005b-1676024111161-4cea63d6100ee8366428cd542b00b511.png" class="h-8" alt="IHG"/>
+</div>
+<div class="flex items-center justify-center rounded-[18px] bg-white p-6 shadow ring-1 ring-slate-200">
+<img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-mobile/mobile-modules/2023/02/10/41cb4d66-03ad-441f-90e1-aa1b59ff5b3f-1676024125571-049c639523430645b7323ff4c703c640.png" class="h-8" alt="Archipelago"/>
+</div>
+</div>
+<!-- Floating next button on the right -->
+<button class="absolute right-0 top-1/2 -translate-y-1/2 rounded-full bg-white p-3 shadow ring-1 ring-slate-200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M9 18l6-6-6-6"/></svg>
+</button>
+</div>
+</div>
+</section>
+
+<section id="section-hotel-terdekat" class="py-10">
+  <div class="mx-auto max-w-[1280px] px-6">
+    <!-- Heading -->
+    <h2 class="text-[28px] md:text-[32px] font-extrabold tracking-tight">
+      Cek Pilihan Hotel Terdekat dari Lokasi Kamu di tiket.com
+    </h2>
+
+    <!-- Tabs -->
+    <div class="mt-5 border-b border-slate-200">
+      <nav class="flex gap-6 overflow-x-auto text-sm font-semibold text-slate-500">
+        <button class="relative -mb-px pb-3 text-slate-900">
+          Hotel Bandung
+          <span class="absolute inset-x-0 -bottom-[1px] h-[3px] rounded-full bg-sky-500"></span>
+        </button>
+        <button class="pb-3 hover:text-slate-900">Hotel Jogja</button>
+        <button class="pb-3 hover:text-slate-900">Hotel Jakarta</button>
+        <button class="pb-3 hover:text-slate-900">Hotel Bali</button>
+        <button class="pb-3 hover:text-slate-900">Hotel Surabaya</button>
+        <button class="pb-3 hover:text-slate-900">Hotel Semarang</button>
+        <button class="pb-3 hover:text-slate-900">Hotel Malang</button>
+        <button class="pb-3 hover:text-slate-900">Hotel Bogor</button>
+        <button class="pb-3 hover:text-slate-900">Hotel Puncak</button>
+        <button class="pb-3 hover:text-slate-900">Hotel dekat Lainnya</button>
+      </nav>
+    </div>
+
+    <!-- List (aktif: Bandung) -->
+    <div class="mt-6 grid grid-cols-1 gap-x-10 gap-y-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <!-- 1 -->
+      <div>
+        <a href="#" class="text-[15px] font-semibold text-slate-900 hover:text-sky-700">Padma Hotel Bandung</a>
+        <p class="text-sm text-slate-500">Pas buat perjalanan bisnis</p>
+      </div>
+      <!-- 2 -->
+      <div>
+        <a href="#" class="text-[15px] font-semibold text-slate-900 hover:text-sky-700">Gaia Hotel Bandung</a>
+        <p class="text-sm text-slate-500">Hotel mewah terlaris #1</p>
+      </div>
+      <!-- 3 -->
+      <div>
+        <a href="#" class="text-[15px] font-semibold text-slate-900 hover:text-sky-700">Hotel Harris Bandung</a>
+        <p class="text-sm text-slate-500">Lokasi hotel dekat pusat belanja</p>
+      </div>
+      <!-- 4 -->
+      <div>
+        <a href="#" class="text-[15px] font-semibold text-slate-900 hover:text-sky-700">Hotel Pullman Bandung</a>
+        <p class="text-sm text-slate-500">Hotel mewah terlaris #7</p>
+      </div>
+      <!-- 5 -->
+      <div>
+        <a href="#" class="text-[15px] font-semibold text-slate-900 hover:text-sky-700">Hotel Santika Bandung</a>
+        <p class="text-sm text-slate-500">Sering penuh</p>
+      </div>
+      <!-- 6 -->
+      <div>
+        <a href="#" class="text-[15px] font-semibold text-sky-700 underline">Hotel Ibis Bandung</a>
+        <p class="text-sm text-slate-500">Terlaris #4 di Bandung</p>
+      </div>
+      <!-- 7 -->
+      <div>
+        <a href="#" class="text-[15px] font-semibold text-slate-900 hover:text-sky-700">Fave Hotel Bandung</a>
+        <p class="text-sm text-slate-500">Hotel mewah terlaris #2</p>
+      </div>
+      <!-- 8 -->
+      <div>
+        <a href="#" class="text-[15px] font-semibold text-slate-900 hover:text-sky-700">Hotel Aryaduta Bandung</a>
+        <p class="text-sm text-slate-500">Lebih murah 25% dari biasanya</p>
+      </div>
+      <!-- 9 -->
+      <div>
+        <a href="#" class="text-[15px] font-semibold text-slate-900 hover:text-sky-700">El Royale Hotel Bandung</a>
+        <p class="text-sm text-slate-500">Fasilitas hotel lengkap & Hotel bersih</p>
+      </div>
+      <!-- 10 -->
+      <div>
+        <a href="#" class="text-[15px] font-semibold text-slate-900 hover:text-sky-700">Tebu Hotel Bandung</a>
+        <p class="text-sm text-slate-500">Lokasi hotel dekat Gedung Sate</p>
+      </div>
+      <!-- 11 -->
+      <div>
+        <a href="#" class="text-[15px] font-semibold text-slate-900 hover:text-sky-700">Grand Tebu Hotel Bandung</a>
+        <p class="text-sm text-slate-500">Pas buat perjalanan bisnis</p>
+      </div>
+      <!-- 12 -->
+      <div>
+        <a href="#" class="text-[15px] font-semibold text-slate-900 hover:text-sky-700">Hotel Hilton Bandung</a>
+        <p class="text-sm text-slate-500">Hotel mewah terlaris #6</p>
+      </div>
+      <!-- 13 -->
+      <div>
+        <a href="#" class="text-[15px] font-semibold text-slate-900 hover:text-sky-700">Hotel Intercontinental Bandung</a>
+        <p class="text-sm text-slate-500">Hotel mewah terlaris #9</p>
+      </div>
+      <!-- 14 -->
+      <div>
+        <a href="#" class="text-[15px] font-semibold text-slate-900 hover:text-sky-700">Trans Luxury Hotel Bandung</a>
+        <p class="text-sm text-slate-500">Hotel mewah terlaris #5</p>
+      </div>
+      <!-- 15 -->
+      <div>
+        <a href="#" class="text-[15px] font-semibold text-slate-900 hover:text-sky-700">Trans Luxury Hotel Bandung</a>
+        <p class="text-sm text-slate-500">Hotel mewah terlaris #5</p>
+      </div>
+      <!-- 16 -->
+      <div>
+        <a href="#" class="text-[15px] font-semibold text-slate-900 hover:text-sky-700">V Hotel Bandung</a>
+        <p class="text-sm text-slate-500">Lokasi hotel dekat tempat wisata</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="section-banner-akhir" class="py-8">
+  <div class="mx-auto max-w-[1280px] px-6">
+    <img
+      src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/w1600h0/mobile-modules/2025/11/05/9f99f43e-bcba-44ab-912d-2085b91009ff-1762338210478-bf30cf8de9f790034638372521388faf.png"
+      alt="Cek Daftar Hari Libur Nasional"
+      class="w-full rounded-[20px] shadow-sm object-cover"
+    />
+  </div>
+</section>
+
+<footer id="footer-tiket" class="bg-white border-t border-slate-200 pt-10">
+  <div class="mx-auto max-w-[1280px] px-6">
+    <!-- Top grid -->
+    <div class="grid grid-cols-2 gap-10 md:grid-cols-5">
+      <!-- Logo + kontak -->
+      <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Tiket.com_logo.svg" alt="tiket.com" class="h-6 mb-4">
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li class="flex items-center gap-2"><span>📱</span> WhatsApp<br> +62 858 1150 0888</li>
+          <li class="flex items-center gap-2"><span>✉️</span> cs@tiket.com</li>
+          <li class="flex items-center gap-2"><span>📞</span> +62 804 1500 878<br> +62 21 3973 0888</li>
+        </ul>
+      </div>
+
+      <!-- Perusahaan -->
+      <div>
+        <h3 class="font-semibold mb-3">Perusahaan</h3>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li>Blog</li><li>Karier</li><li>Korporasi</li><li>Afiliasi</li>
+          <li>BliBli Tiket Rewards</li><li>Perlindungan</li><li>BliBli.com</li><li>Cicilan</li>
+        </ul>
+      </div>
+
+      <!-- Produk -->
+      <div>
+        <h3 class="font-semibold mb-3">Produk</h3>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li>Pesawat</li><li>Hotel</li><li>Vila & Apt.</li><li>To Do</li>
+          <li>Kereta</li><li>Bus & Travel</li><li>Ferry</li><li>Sewa Mobil</li><li>Event</li>
+        </ul>
+      </div>
+
+      <!-- Dukungan -->
+      <div>
+        <h3 class="font-semibold mb-3">Dukungan</h3>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li>Pusat Bantuan halo tiket</li><li>Group Booking</li><li>Kebijakan Privasi</li>
+          <li>Syarat & Ketentuan</li><li>Daftarkan Hotel Kamu</li>
+          <li>Daftarkan Aktivitas/Event Kamu</li><li>tiket CLEAN</li><li>tiket FLEXI</li>
+        </ul>
+      </div>
+
+      <!-- Aplikasi -->
+      <div>
+        <h3 class="font-semibold mb-3">Lebih murah di aplikasi</h3>
+        <div class="space-y-2">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" class="h-10" alt="App Store" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" class="h-10" alt="Google Play" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom info -->
+    <div class="mt-10 border-t border-slate-200 pt-6 flex flex-wrap items-center justify-between gap-6 text-sm text-slate-500">
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <div class="flex items-center gap-2">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Wonderful_Indonesia_logo.svg" class="h-5" alt="Wonderful Indonesia" />
+          <span>Partner Resmi Kemenparekraf</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span>Keamanan transaksi:</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo_2014.svg" class="h-4" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" class="h-4" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/JCB_logo.svg" class="h-4" />
+        </div>
+      </div>
+
+      <!-- Sosial media -->
+      <div class="flex items-center gap-4 text-slate-600 text-lg">
+        <i class="ri-facebook-fill"></i>
+        <i class="ri-instagram-line"></i>
+        <i class="ri-youtube-line"></i>
+        <i class="ri-twitter-x-line"></i>
+        <i class="ri-tiktok-fill"></i>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <div class="h-24"></div>
+</body>
+
+</html>
