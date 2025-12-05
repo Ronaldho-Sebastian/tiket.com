@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header dan Hero Section Polos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="hidden lg:block bg-white text-sm text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-end space-x-6">
+            <a href="#" class="hover:text-gray-900 transition duration-150">Jadi Partner tiket.com</a>
+            <a href="#" class="hover:text-gray-900 transition duration-150">BliBli Tiket Rewards</a>
+            <a href="#" class="hover:text-gray-900 transition duration-150">Your Orders</a>
+            <div class="relative group">
+                <button class="flex items-center space-x-1 hover:text-gray-900 transition duration-150">
+                    <span class="font-bold">IDR</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <div class="flex items-center justify-between">
+            <div class="flex-shrink-0">
+                <div class="h-8 w-24 bg-yellow-500 rounded flex items-center justify-center text-white font-black text-xl">
+                    tiket<span class="text-blue-600">.com</span>
+                </div>
+            </div>
+
+            <div class="flex-grow max-w-lg mx-8 hidden lg:block">
+                <div class="relative">
+                    <input 
+                        type="text" 
+                        placeholder="Staycation di Bandung" 
+                        class="w-full bg-gray-100 border border-gray-200 rounded-lg py-3 px-12 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                    <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-3">
+                <button class="px-6 py-2 border border-blue-100 text-blue-600 font-semibold rounded-lg bg-blue-50 hover:bg-blue-100 transition duration-150">
+                    Masuk
+                </button>
+                <button class="px-6 py-2 text-white font-semibold rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-150 shadow-md shadow-blue-300">
+                    Daftar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 hidden lg:block mb-4">
+        <nav class="flex space-x-6 text-gray-700 font-semibold">
+            <a href="#" class="hover:text-blue-600 transition duration-150">Pesawat</a>
+            <a href="#" class="hover:text-blue-600 transition duration-150">Hotel</a>
+            <a href="#" class="hover:text-blue-600 transition duration-150">Vila & Apt.</a>
+            <a href="#" class="hover:text-blue-600 transition duration-150">To Do</a>
+            <a href="#" class="hover:text-blue-600 transition duration-150">Kereta</a>
+            
+            <div class="relative group">
+                <button class="flex items-center space-x-1 hover:text-blue-600 transition duration-150">
+                    <span>Lainnya</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+<section class="relative bg-blue-600 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8"> 
+    
+    <div class="relative flex flex-col lg:flex-row items-center h-80 sm:h-96 md:h-[450px] overflow-hidden rounded-lg lg:rounded-b-none lg:rounded-t-none">
+      
+      <div class="absolute inset-0 w-full h-full">
+        <img 
+          src="url-gambar-agen-cs.jpg" 
+          alt="Agen layanan pelanggan halo tiket" 
+          class="h-full w-full object-cover object-left lg:object-center"
+        >
+        <div class="absolute inset-0 bg-blue-600 opacity-80"></div>
+        <div class="absolute inset-0 bg-gradient-to-l from-blue-600 via-blue-600/70 to-transparent"></div>
+      </div>
+      
+      <div class="relative z-10 w-full lg:w-1/2 p-8 sm:p-12 text-white text-center lg:text-left flex flex-col items-center lg:items-start justify-center">
+        <div class="mb-4">
+          <img 
+            src="url-logo-halotiket.svg" 
+            alt="Logo Halo Tiket" 
+            class="h-16 sm:h-20 md:h-24 mx-auto lg:mx-0"
+          >
+        </div>
+        <p class="text-xl sm:text-2xl md:text-3xl font-semibold leading-relaxed">
+          Wajah baru layanan pelanggan tiket.com.
+        </p>
+      </div>
+
+      <div class="absolute bottom-4 right-4 z-20">
+        <button class="flex items-center space-x-2 px-5 py-3 bg-white text-gray-800 font-semibold rounded-full shadow-lg hover:bg-gray-100 transition duration-200">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span>Semua info page</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="bg-white py-12 sm:py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-left mb-10">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Perkenalkan, halo tiket!</h2>
+      <p class="text-base sm:text-lg text-gray-700 leading-relaxed max-w-2xl">
+        halo tiket adalah wajah baru layanan pelanggan tiket.com. Ada kendala? Pasti diurus seketika! Layanan kami sekarang udah makin cepat—makin bisa kamu andalkan.
+      </p>
+    </div>
+
+    <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">Layanan halo tiket</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+      
+      <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition duration-200">
+        <div class="w-16 h-16 mb-4 flex items-center justify-center">
+            <img src="url-icon-live-chat.svg" alt="Live chat icon" class="w-full h-full object-contain">
+        </div>
+        <p class="text-lg font-semibold text-gray-800">Live chat</p>
+      </div>
+
+      <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition duration-200">
+        <div class="w-16 h-16 mb-4 flex items-center justify-center">
+            <img src="url-icon-whatsapp.svg" alt="WhatsApp icon" class="w-full h-full object-contain">
+        </div>
+        <p class="text-lg font-semibold text-gray-800">WhatsApp</p>
+      </div>
+
+      <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition duration-200">
+        <div class="w-16 h-16 mb-4 flex items-center justify-center">
+            <img src="url-icon-telepon.svg" alt="Telepon icon" class="w-full h-full object-contain">
+        </div>
+        <p class="text-lg font-semibold text-gray-800">Telepon</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<section class="bg-white py-12 sm:py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-10">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Ini cara halo tiket bantu kamu!</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+      
+      <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg border border-gray-100">
+        <div class="w-16 h-16 mb-4 flex items-center justify-center">
+            <img src="url-icon-30-detik.svg" alt="Ikon Jam Cepat" class="w-full h-full object-contain">
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">30 Detik Nyambung</h3>
+        <p class="text-sm text-gray-600 text-center">
+          Agen kami merespons chat/teleponmu dalam 30 detik. Tapi, bisa lebih lama di jam sibuk.
+        </p>
+      </div>
+
+      <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg border border-gray-100">
+        <div class="w-16 h-16 mb-4 flex items-center justify-center">
+            <img src="url-icon-1-jam-tuntas.svg" alt="Ikon Jam Tuntas" class="w-full h-full object-contain">
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">1 Jam Tuntas, Bebas Cemas</h3>
+        <p class="text-sm text-gray-600 text-center">
+          Kendala darurat, seperti gagal check in atau gagal bayar, bisa selesai dalam 1 Jam. Tapi, bisa lebih lama di jam sibuk.
+        </p>
+      </div>
+
+      <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg border border-gray-100">
+        <div class="w-16 h-16 mb-4 flex items-center justify-center">
+            <img src="url-icon-travis-chat.svg" alt="Ikon Travis Chatbot" class="w-full h-full object-contain">
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Travis Siap Bantu!</h3>
+        <p class="text-sm text-gray-600 text-center">
+          Fitur live chat kami siap menjawab pertanyaanmu! Kami akan memandu dan mengarahkan kamu ke bantuan yang tepat.
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<section class="w-full bg-white py-20">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <!-- Title -->
+  
+
+    <!-- Feature Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Card 1 -->
+      <div class="bg-white shadow-lg rounded-xl p-8 flex flex-col items-center">
+        <img src="clock-icon.png" alt="24/7" class="w-20 mb-5">
+        <h3 class="text-xl font-semibold text-gray-800">
+          Siap Sedia 24/7
+        </h3>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white shadow-lg rounded-xl p-8 flex flex-col items-center">
+        <img src="tracking-icon.png" alt="Tracking" class="w-20 mb-5">
+        <h3 class="text-xl font-semibold text-gray-800">
+          Real-Time Tracking
+        </h3>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white shadow-lg rounded-xl p-8 flex flex-col items-center">
+        <img src="help-icon.png" alt="Help" class="w-20 mb-5">
+        <h3 class="text-xl font-semibold text-gray-800">
+          Bantuan Langsung
+        </h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="w-full py-16">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <div class="flex items-center gap-6 bg-gradient-to-br from-blue-50 to-blue-100 
+                p-10 rounded-3xl shadow-lg">
+
+      <!-- ICON -->
+      <img 
+        src="/mnt/data/af6977e3-6eb6-4ede-bd64-e2da76446d1b.png" 
+        class="w-28 h-28 object-contain" 
+        alt="halo tiket"
+      >
+
+      <!-- TEXT -->
+      <div>
+        <h2 class="text-4xl font-bold text-gray-800 mb-3">
+          Ada kendala di pesanan?
+        </h2>
+
+        <p class="text-gray-700 text-lg leading-relaxed">
+          Kendala darurat bisa selesai 1 jam. <br>
+          Kamu bisa terhubung dalam 30 detik.
+        </p>
+
+        <a 
+          href="#" 
+          class="text-blue-600 font-semibold text-xl mt-4 inline-block hover:underline"
+        >
+          Hubungi halo tiket
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<footer id="footer-tiket" class="bg-white border-t border-slate-200 pt-10">
+  <div class="mx-auto max-w-[1280px] px-6">
+    <!-- Top grid -->
+    <div class="grid grid-cols-2 gap-10 md:grid-cols-5">
+      <!-- Logo + kontak -->
+      <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Tiket.com_logo.svg" alt="tiket.com" class="h-6 mb-4">
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li class="flex items-center gap-2"><span>📱</span> WhatsApp<br> +62 858 1150 0888</li>
+          <li class="flex items-center gap-2"><span>✉️</span> cs@tiket.com</li>
+          <li class="flex items-center gap-2"><span>📞</span> +62 804 1500 878<br> +62 21 3973 0888</li>
+        </ul>
+      </div>
+
+      <!-- Perusahaan -->
+      <div>
+        <h3 class="font-semibold mb-3">Perusahaan</h3>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li>Blog</li><li>Karier</li><li>Korporasi</li><li>Afiliasi</li>
+          <li>BliBli Tiket Rewards</li><li>Perlindungan</li><li>BliBli.com</li><li>Cicilan</li>
+        </ul>
+      </div>
+
+      <!-- Produk -->
+      <div>
+        <h3 class="font-semibold mb-3">Produk</h3>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li>Pesawat</li><li>Hotel</li><li>Vila & Apt.</li><li>To Do</li>
+          <li>Kereta</li><li>Bus & Travel</li><li>Ferry</li><li>Sewa Mobil</li><li>Event</li>
+        </ul>
+      </div>
+
+      <!-- Dukungan -->
+      <div>
+        <h3 class="font-semibold mb-3">Dukungan</h3>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li>Pusat Bantuan halo tiket</li><li>Group Booking</li><li>Kebijakan Privasi</li>
+          <li>Syarat & Ketentuan</li><li>Daftarkan Hotel Kamu</li>
+          <li>Daftarkan Aktivitas/Event Kamu</li><li>tiket CLEAN</li><li>tiket FLEXI</li>
+        </ul>
+      </div>
+
+      <!-- Aplikasi -->
+      <div>
+        <h3 class="font-semibold mb-3">Lebih murah di aplikasi</h3>
+        <div class="space-y-2">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" class="h-10" alt="App Store" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" class="h-10" alt="Google Play" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom info -->
+    <div class="mt-10 border-t border-slate-200 pt-6 flex flex-wrap items-center justify-between gap-6 text-sm text-slate-500">
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <div class="flex items-center gap-2">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Wonderful_Indonesia_logo.svg" class="h-5" alt="Wonderful Indonesia" />
+          <span>Partner Resmi Kemenparekraf</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span>Keamanan transaksi:</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo_2014.svg" class="h-4" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" class="h-4" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/JCB_logo.svg" class="h-4" />
+        </div>
+      </div>
+
+      <!-- Sosial media -->
+      <div class="flex items-center gap-4 text-slate-600 text-lg">
+        <i class="ri-facebook-fill"></i>
+        <i class="ri-instagram-line"></i>
+        <i class="ri-youtube-line"></i>
+        <i class="ri-twitter-x-line"></i>
+        <i class="ri-tiktok-fill"></i>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

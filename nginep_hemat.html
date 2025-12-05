@@ -10,6 +10,82 @@
 </head>
 <body class="bg-gray-100">
 
+      <header
+    class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="mx-auto max-w-[120rem] px-4 sm:px-6 lg:px-8 h-20 flex items-center gap-4">
+      <!-- Left: logo + search -->
+      <div class="flex items-center gap-5 min-w-0 flex-1">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 shrink-0">
+          <!-- Simplified tiket.com logomark -->
+          <span class="inline-grid place-items-center w-9 h-9 rounded-full bg-yellow-400 text-white font-bold">t</span>
+          <span class="sr-only">tiket.com</span>
+        </a>
+
+        <!-- Search -->
+        <div class="hidden md:flex items-center min-w-0 flex-1">
+          <div
+            class="flex items-center gap-3 w-full rounded-full border border-slate-200 bg-slate-50 px-4 py-2.5 focus-within:border-slate-300 focus-within:ring-2 focus-within:ring-slate-100">
+            <!-- search icon -->
+            <svg class="w-5 h-5 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input class="w-full bg-transparent outline-none text-[15px] placeholder:text-slate-400"
+              placeholder="Tur ke Lombok" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Center: main nav -->
+      <nav class="hidden lg:flex items-center gap-5 text-[15px] font-medium">
+        <a class="hover:text-slate-900 text-slate-700" href="#">Pesawat</a>
+        <a class="text-slate-900 font-semibold" href="#">Hotel</a>
+        <a class="hover:text-slate-900 text-slate-700" href="#">Vila & Apt.</a>
+        <a class="hover:text-slate-900 text-slate-700" href="#">To Do</a>
+        <a class="hover:text-slate-900 text-slate-700" href="#">Kereta</a>
+        <div class="relative">
+          <button class="flex items-center gap-1 text-slate-700 hover:text-slate-900">
+            Lainnya
+            <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Right: orders, currency, auth -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <a href="#" class="hidden xl:inline text-[15px] text-slate-700 hover:text-slate-900">Your Orders</a>
+        <button class="hidden md:flex items-center gap-1.5 text-[15px] text-slate-700 hover:text-slate-900">
+          <img alt="ID" class="w-5 h-5 rounded-sm" src="https://flagcdn.com/w20/id.png" />
+          IDR
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+        <a class="px-4 py-2.5 rounded-full border border-slate-200 text-[15px] font-semibold hover:bg-slate-50"
+          href="#">Masuk</a>
+        <a class="px-4 py-2.5 rounded-full bg-tiket.blue text-white text-[15px] font-semibold shadow-tiket hover:brightness-110"
+          href="#">Daftar</a>
+        <button
+          class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-slate-200">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
   <!-- Hero Section -->
  
   <section class="bg-white py-8 sm:py-12">
@@ -137,5 +213,84 @@
     </div>
   </div>
 </section>
+
+<footer id="footer-tiket" class="bg-white border-t border-slate-200 pt-10">
+  <div class="mx-auto max-w-[1280px] px-6">
+    <!-- Top grid -->
+    <div class="grid grid-cols-2 gap-10 md:grid-cols-5">
+      <!-- Logo + kontak -->
+      <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Tiket.com_logo.svg" alt="tiket.com" class="h-6 mb-4">
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li class="flex items-center gap-2"><span>📱</span> WhatsApp<br> +62 858 1150 0888</li>
+          <li class="flex items-center gap-2"><span>✉️</span> cs@tiket.com</li>
+          <li class="flex items-center gap-2"><span>📞</span> +62 804 1500 878<br> +62 21 3973 0888</li>
+        </ul>
+      </div>
+
+      <!-- Perusahaan -->
+      <div>
+        <h3 class="font-semibold mb-3">Perusahaan</h3>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li>Blog</li><li>Karier</li><li>Korporasi</li><li>Afiliasi</li>
+          <li>BliBli Tiket Rewards</li><li>Perlindungan</li><li>BliBli.com</li><li>Cicilan</li>
+        </ul>
+      </div>
+
+      <!-- Produk -->
+      <div>
+        <h3 class="font-semibold mb-3">Produk</h3>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li>Pesawat</li><li>Hotel</li><li>Vila & Apt.</li><li>To Do</li>
+          <li>Kereta</li><li>Bus & Travel</li><li>Ferry</li><li>Sewa Mobil</li><li>Event</li>
+        </ul>
+      </div>
+
+      <!-- Dukungan -->
+      <div>
+        <h3 class="font-semibold mb-3">Dukungan</h3>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li>Pusat Bantuan halo tiket</li><li>Group Booking</li><li>Kebijakan Privasi</li>
+          <li>Syarat & Ketentuan</li><li>Daftarkan Hotel Kamu</li>
+          <li>Daftarkan Aktivitas/Event Kamu</li><li>tiket CLEAN</li><li>tiket FLEXI</li>
+        </ul>
+      </div>
+
+      <!-- Aplikasi -->
+      <div>
+        <h3 class="font-semibold mb-3">Lebih murah di aplikasi</h3>
+        <div class="space-y-2">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" class="h-10" alt="App Store" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" class="h-10" alt="Google Play" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom info -->
+    <div class="mt-10 border-t border-slate-200 pt-6 flex flex-wrap items-center justify-between gap-6 text-sm text-slate-500">
+      <div class="flex flex-col md:flex-row items-center gap-4">
+        <div class="flex items-center gap-2">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Wonderful_Indonesia_logo.svg" class="h-5" alt="Wonderful Indonesia" />
+          <span>Partner Resmi Kemenparekraf</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span>Keamanan transaksi:</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo_2014.svg" class="h-4" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" class="h-4" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/JCB_logo.svg" class="h-4" />
+        </div>
+      </div>
+
+      <!-- Sosial media -->
+      <div class="flex items-center gap-4 text-slate-600 text-lg">
+        <i class="ri-facebook-fill"></i>
+        <i class="ri-instagram-line"></i>
+        <i class="ri-youtube-line"></i>
+        <i class="ri-twitter-x-line"></i>
+        <i class="ri-tiktok-fill"></i>
+      </div>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
